@@ -1,4 +1,4 @@
-![Screenshot from 2024-01-26 18-57-11](https://github.com/Asaadziad/7SegmentCLI/assets/108868994/58467a7e-0560-48eb-aff8-8b75d629f027)# 7-Segments Number representation
+# 7-Segments Number representation
 This is a CLI Program that prints to console the number taken as input from user in a 7 segments representation.
 
 3 horizontal segments (a,g and d) and 4 vertical segments (f,b,e and c) as described in this picture:
