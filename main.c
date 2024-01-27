@@ -66,8 +66,8 @@ int main() {
       if(hasError) {
         printf("The length is not acceptable.\n");
       }
-      printf("Please enter the length of horizontal segments: ");
-      int input = scanf("%d", &horizontal); 
+      printf("Please enter the length of horizontal segments (from 3 to 40): ");
+      bool input = scanf("%d", &horizontal); 
       hasError = ((horizontal < 3) || (horizontal > 40)) && (input);
   } while(hasError);
   
@@ -76,20 +76,23 @@ int main() {
         printf("The length is not acceptable.\n");
       }
       printf("Now, enter the length of vertical segments (from 3 to 40): ");
-      int input = scanf("%d", &vertical); 
-      hasError =( (vertical < 3) || (vertical > 40) || (vertical > 2 * horizontal) || (vertical < horizontal / 2)) && (input);
+      bool input = scanf("%d", &vertical); 
+      hasError = ((vertical < 3) || (vertical > 40) || (vertical > 2 * horizontal) || (vertical < horizontal / 2)) && (input);
   } while(hasError);
   int integer;
-  do {
+
+  while(true) {
+    do {
       if(hasError) {
-        printf("Error: not valid input.\n");
+        printf("Error: invalid input.\n");
       }
-      printf("Enter a positive integer: ");
-      int input = scanf("%d", &integer); 
-      hasError = (integer < 0) && (input);
-  } while(hasError);
-
-  print_seven_segment(integer, horizontal, vertical);
-
+      printf("Enter a positive integer (from 0 to 9): ");
+      bool input = scanf("%d", &integer); 
+      hasError = (integer < 0 || integer > 9) && (input);
+    } while(hasError);
+    print_seven_segment(integer, horizontal, vertical);
+  }
+  
+  
   return 0;
 }
