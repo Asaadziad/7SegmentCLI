@@ -17,7 +17,7 @@ git clone https://github.com/Asaadziad/7SegmentCLI
 
 Build the project: 
 ```
-make
+make build
 ```
 
 Run the project:
